@@ -39,32 +39,58 @@ public class Main {
 					if(m == -1 && d == -1) {
 						break;
 					}
-					if(m == -1)
-						index = d;
+					if(m == -1) {
+						index = d;					
+					}
 					else if(d == -1)
 						index = m;
 					else if(d > m)
 						index = m;
 					else
 						index = d;
-					index = m;
 					
 					
 					
-					int x = Integer.parseInt(line.get(index-1));
-					int y = Integer.parseInt(line.get(index+1));
+					
+					double x = Double.parseDouble(line.get(index-1));
+					double y = Double.parseDouble(line.get(index+1));
 					double answer = Calculator.calc(x,y,line.get(index));
-					out.println(answer);
 					line.remove(index-1);
 					line.remove(index-1);
 					line.remove(index-1);
-					line.add(0, Double.toString(answer));
-					out.println(line);
+					line.add(index-1, Double.toString(answer));
 				}
-				;
 				//addition & subtraction
-				
-				//out.println(answer);
+				while(line.contains("+") || line.contains("-")) {
+					int m = line.indexOf("+");
+					int d = line.indexOf("-");
+					int index;
+					if(m == -1 && d == -1) {
+						break;
+					}
+					if(m == -1) {
+						index = d;					
+					}
+					else if(d == -1)
+						index = m;
+					else if(d > m)
+						index = m;
+					else
+						index = d;
+					
+					
+					
+					
+					double x = Double.parseDouble(line.get(index-1));
+					double y = Double.parseDouble(line.get(index+1));
+					double answer = Calculator.calc(x,y,line.get(index));
+					line.remove(index-1);
+					line.remove(index-1);
+					line.remove(index-1);
+					line.add(index-1, Double.toString(answer));
+					
+				}
+				out.printf("%.3f", Double.parseDouble(line.get(0)));
 			}
 			
 			if(s.equals("what")) {
