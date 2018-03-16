@@ -17,15 +17,22 @@ public class Main {
 		/*
 		 * processing the question
 		 */
+		
 		String question = big.nextLine(); 
 		do { 
-			//String[] q = question.split(" ");
 			
-			Scanner line = new Scanner(question);
-			String s = line.next().toLowerCase();
+			//setting up arraylist of question
+			String[] q = question.split(" ");	
+			List<String> line = Arrays.asList(q);
+			String s = line.get(0).toLowerCase(); //the first word
 			
+			//Simplifying expression
 			if(numbers.contains(s.substring(0,1))) {
-				//Calculator.
+				if(line.size() > 1) {
+					int x = Integer.parseInt(line.get(0));
+					int y = Integer.parseInt(line.get(2));
+					//Calculator.calculate(x,y,line.get(1));				
+				}	
 			}
 			
 			if(s.equals("what")) {
