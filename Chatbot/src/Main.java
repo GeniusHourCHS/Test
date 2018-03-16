@@ -30,78 +30,7 @@ public class Main {
 			
 			//Simplifying expression
 			if(numbers.contains(s.substring(0,1))) {
-				//exponent
-				while(line.contains("^")) {
-					int index = line.indexOf("^");
-					double x = Double.parseDouble(line.get(index-1));
-					double y = Double.parseDouble(line.get(index+1));
-					double answer = Calculator.calc(x,y,line.get(index));
-					line.remove(index-1);
-					line.remove(index-1);
-					line.remove(index-1);
-					line.add(index-1, Double.toString(answer));
-				}
-				
-				//multiplication & division
-				while(line.contains("*") || line.contains("/")) {
-					int m = line.indexOf("*");
-					int d = line.indexOf("/");
-					int index;
-					if(m == -1 && d == -1) {
-						break;
-					}
-					if(m == -1) {
-						index = d;					
-					}
-					else if(d == -1)
-						index = m;
-					else if(d > m)
-						index = m;
-					else
-						index = d;
-					
-					
-					
-					
-					double x = Double.parseDouble(line.get(index-1));
-					double y = Double.parseDouble(line.get(index+1));
-					double answer = Calculator.calc(x,y,line.get(index));
-					line.remove(index-1);
-					line.remove(index-1);
-					line.remove(index-1);
-					line.add(index-1, Double.toString(answer));
-				}
-				//addition & subtraction
-				while(line.contains("+") || line.contains("-")) {
-					int m = line.indexOf("+");
-					int d = line.indexOf("-");
-					int index;
-					if(m == -1 && d == -1) {
-						break;
-					}
-					if(m == -1) {
-						index = d;					
-					}
-					else if(d == -1)
-						index = m;
-					else if(d > m)
-						index = m;
-					else
-						index = d;
-					
-					
-					
-					
-					double x = Double.parseDouble(line.get(index-1));
-					double y = Double.parseDouble(line.get(index+1));
-					double answer = Calculator.calc(x,y,line.get(index));
-					line.remove(index-1);
-					line.remove(index-1);
-					line.remove(index-1);
-					line.add(index-1, Double.toString(answer));
-					
-				}
-				out.printf("%.3f", Double.parseDouble(line.get(0)));
+				simplify(line);
 			}
 			
 			if(s.equals("what")) {
@@ -115,5 +44,79 @@ public class Main {
 		} 
 		while (!question.equals("bye")); 
 		out.println("okay, bye :'(");
-	} 
+	}
+	public static void simplify(ArrayList<String> line) {
+		//exponent
+		while(line.contains("^")) {
+			int index = line.indexOf("^");
+			double x = Double.parseDouble(line.get(index-1));
+			double y = Double.parseDouble(line.get(index+1));
+			double answer = Calculator.calc(x,y,line.get(index));
+			line.remove(index-1);
+			line.remove(index-1);
+			line.remove(index-1);
+			line.add(index-1, Double.toString(answer));
+		}
+		
+		//multiplication & division
+		while(line.contains("*") || line.contains("/")) {
+			int m = line.indexOf("*");
+			int d = line.indexOf("/");
+			int index;
+			if(m == -1 && d == -1) {
+				break;
+			}
+			if(m == -1) {
+				index = d;					
+			}
+			else if(d == -1)
+				index = m;
+			else if(d > m)
+				index = m;
+			else
+				index = d;
+			
+			
+			
+			
+			double x = Double.parseDouble(line.get(index-1));
+			double y = Double.parseDouble(line.get(index+1));
+			double answer = Calculator.calc(x,y,line.get(index));
+			line.remove(index-1);
+			line.remove(index-1);
+			line.remove(index-1);
+			line.add(index-1, Double.toString(answer));
+		}
+		//addition & subtraction
+		while(line.contains("+") || line.contains("-")) {
+			int m = line.indexOf("+");
+			int d = line.indexOf("-");
+			int index;
+			if(m == -1 && d == -1) {
+				break;
+			}
+			if(m == -1) {
+				index = d;					
+			}
+			else if(d == -1)
+				index = m;
+			else if(d > m)
+				index = m;
+			else
+				index = d;
+			
+			
+			
+			
+			double x = Double.parseDouble(line.get(index-1));
+			double y = Double.parseDouble(line.get(index+1));
+			double answer = Calculator.calc(x,y,line.get(index));
+			line.remove(index-1);
+			line.remove(index-1);
+			line.remove(index-1);
+			line.add(index-1, Double.toString(answer));
+			
+		}
+		out.printf("%.3f\n", Double.parseDouble(line.get(0)));
+	}
 }
