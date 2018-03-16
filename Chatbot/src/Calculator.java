@@ -11,8 +11,11 @@ public class Calculator {
 		double answer = 0.0;
 		
 		Scanner scanObject = new Scanner(System.in);
+		System.out.println("1st");
 		num1 = scanObject.nextDouble();
+		System.out.println("2nd");
 		num2 = scanObject.nextDouble();
+		System.out.println("Opperation symbol");
 		operator = scanObject.next().charAt(0);
 		
 		switch (operator) {
