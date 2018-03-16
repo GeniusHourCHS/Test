@@ -6,11 +6,23 @@ public class Main {
 		out.println("I can: add numbers and tell jokes. What's your name?"); 
 		String name = big.next(); 
 		out.println("Great, " + name + ". Now ask me anything."); 
+		big.nextLine();
 		String question = big.nextLine(); 
 		do { 
-			Scanner line = new Scanner(question); 
-			out.println(question + " "); 
-			question = big.nextLine(); } 
+			
+			Scanner line = new Scanner(question);
+			String s = line.next().toLowerCase();
+			
+			
+			if(s.equals("what")) {
+				out.println("what?");
+			} else if(s.equals("how")) {
+				
+			}
+			
+			question = big.nextLine(); 
+			
+		} 
 		while (!question.equals("stop")); 
 	} 
 }
