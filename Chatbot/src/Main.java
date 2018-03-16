@@ -28,11 +28,28 @@ public class Main {
 			
 			//Simplifying expression
 			if(numbers.contains(s.substring(0,1))) {
-				if(line.size() > 1) {
-					int x = Integer.parseInt(line.get(0));
-					int y = Integer.parseInt(line.get(2));
-					//Calculator.calculate(x,y,line.get(1));				
-				}	
+				//multiplication & division
+				/*
+				if(line.contains("*") || line.contains("/")) {
+					boolean isD, isM = false;
+					int m = line.indexOf("*"); if(m==-1) isD = true;
+					int d = line.indexOf("/"); if(d==-1) isM = true;
+					if(isD) 
+					int x = Integer.parseInt(line.get(index)));
+					int y = Integer.parseInt(line.get(index+2));
+					//double answer = Calculator.calc(x,y,line.get(index+1));
+					line.remove(index);
+					line.remove(index+1);
+					line.remove(index+2);
+					//line.add(0, Double.toString(answer));
+				}
+				*/
+				int x = Integer.parseInt(line.get(0));
+				int y = Integer.parseInt(line.get(2));
+				double answer = Calculator.calc(x,y,line.get(1));
+				//addition & subtraction
+				
+				out.println(answer);
 			}
 			
 			if(s.equals("what")) {

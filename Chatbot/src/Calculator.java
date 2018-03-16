@@ -1,10 +1,10 @@
 class Calculator {
 
-		double answer = 0.0;
-		double fail = 0.0;
 		
-		public <string> double calc(double one, double two, string operator){
-			
+		
+		public static double calc(double one, double two, String operator){
+			double answer = 0.0;
+			double fail = 0.0;
 			if(operator == "+") {
 			answer = one + two;
 			}
