@@ -32,7 +32,7 @@ public class Main {
 			
 			//Simplifying expression
 			if(numbers.contains(s.substring(0,1))) {
-				simplify(line);
+				out.println(simplify(line));
 			}
 			
 			if(s.equals("what")) {
@@ -47,14 +47,15 @@ public class Main {
 		while (!question.equals("bye")); 
 		out.println("okay, bye :'(");
 	}
+	
 	/*
 	 * @param line is an expression in form "# sign # sign #"
-	 * method outputs to the console the answer formatted to the thousandths place, if necessary
+	 * @return a formatted string with the answer
 	 */
-	public static void simplify(ArrayList<String> line) {
+	public static String simplify(ArrayList<String> line) {
 		if(line.toString().equals("[2, +, 2, -, 1]")) {
-			out.println("TWO PLUS TWO MINUS ONE THAT'S THREE QUICK MATHS!\n--BIG SHAQ, 2017");
-		} else {
+			return "TWO PLUS TWO MINUS ONE THAT'S THREE QUICK MATHS!\n--BIG SHAQ, 2017";
+		}
 
 		//exponent
 		while(line.contains("^")) {
@@ -97,6 +98,7 @@ public class Main {
 			line.remove(index-1);
 			line.add(index-1, Double.toString(answer));
 		}
+		
 		//addition & subtraction
 		while(line.contains("+") || line.contains("-")) {
 			int m = line.indexOf("+");
@@ -127,7 +129,15 @@ public class Main {
 			line.add(index-1, Double.toString(answer));
 			
 		}
-		out.printf("%.3f\n", Double.parseDouble(line.get(0)));
-	}
+		
+		String output = ""+line.get(0);
+		//formatting the output
+		while(output.charAt(output.length()-1) == '0') {
+			output = output.substring(0, output.length()-1);
+		}
+		if(output.charAt(output.length()-1) == '.') {
+			output = output.substring(0, output.length()-1);
+		}
+		return output;
 	}
 }
