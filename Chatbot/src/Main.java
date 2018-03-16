@@ -11,7 +11,7 @@ public class Main {
 		 * Introduction and greeting
 		 */
 		out.println("Hello, I am chatbot."); 
-		out.println("I can: add numbers and tell jokes. What's your name?"); 
+		out.println("Ask me things like: \"How are you?\", or \"Make my name fancy\". What's your name?"); 
 		String name = big.next(); 
 		out.println("Great, " + name + ". Now ask me anything."); 
 		big.nextLine();
@@ -37,8 +37,8 @@ public class Main {
 			
 			if(s.equals("what")) {
 				out.println("what?");
-			} else if(s.equals("how")) {
-				
+			} else if(s.equals("no")) {
+				out.println("Why not?");
 			}
 			
 			question = big.nextLine(); 
@@ -52,6 +52,9 @@ public class Main {
 	 * method outputs to the console the answer formatted to the thousandths place, if necessary
 	 */
 	public static void simplify(ArrayList<String> line) {
+		if(line.toString().equals("[2, +, 2, -, 1]")) {
+			out.println("TWO PLUS TWO MINUS ONE THAT'S THREE QUICK MATHS!\n--BIG SHAQ, 2017");
+		} else {
 
 		//exponent
 		while(line.contains("^")) {
@@ -125,5 +128,6 @@ public class Main {
 			
 		}
 		out.printf("%.3f\n", Double.parseDouble(line.get(0)));
+	}
 	}
 }
