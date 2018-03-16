@@ -1,5 +1,7 @@
 import java.io.*; import java.util.*; import static java.lang.System.*; 
+
 public class Main { 
+	
 	public static void main(String[] args) { 
 		Scanner big = new Scanner(System.in); 
 		String[] nums = {"0","1","2","3","4","5","6","7","8","9"};
@@ -45,7 +47,12 @@ public class Main {
 		while (!question.equals("bye")); 
 		out.println("okay, bye :'(");
 	}
+	/*
+	 * @param line is an expression in form "# sign # sign #"
+	 * method outputs to the console the answer formatted to the thousandths place, if necessary
+	 */
 	public static void simplify(ArrayList<String> line) {
+
 		//exponent
 		while(line.contains("^")) {
 			int index = line.indexOf("^");
