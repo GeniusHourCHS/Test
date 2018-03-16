@@ -30,8 +30,19 @@ public class Main {
 			
 			//Simplifying expression
 			if(numbers.contains(s.substring(0,1))) {
-				//multiplication & division
+				//exponent
+				while(line.contains("^")) {
+					int index = line.indexOf("^");
+					double x = Double.parseDouble(line.get(index-1));
+					double y = Double.parseDouble(line.get(index+1));
+					double answer = Calculator.calc(x,y,line.get(index));
+					line.remove(index-1);
+					line.remove(index-1);
+					line.remove(index-1);
+					line.add(index-1, Double.toString(answer));
+				}
 				
+				//multiplication & division
 				while(line.contains("*") || line.contains("/")) {
 					int m = line.indexOf("*");
 					int d = line.indexOf("/");
