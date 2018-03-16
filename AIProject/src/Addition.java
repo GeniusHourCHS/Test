@@ -6,7 +6,7 @@ public class Addition {
 		int f = 5;
 		int x = f;
 		f = 7;
-		System.out.println(x + f);
+		System.out.println(x + f + "hihihhftyhihi");
 	}
 
 }
