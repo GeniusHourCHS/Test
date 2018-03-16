@@ -23,33 +23,48 @@ public class Main {
 			
 			//setting up arraylist of question
 			String[] q = question.split(" ");	
-			List<String> line = Arrays.asList(q);
+			List<String> ln = Arrays.asList(q);
+			ArrayList<String> line = new ArrayList<>();
+			line.addAll(ln);
 			String s = line.get(0).toLowerCase(); //the first word
 			
 			//Simplifying expression
 			if(numbers.contains(s.substring(0,1))) {
 				//multiplication & division
-				/*
-				if(line.contains("*") || line.contains("/")) {
-					boolean isD, isM = false;
-					int m = line.indexOf("*"); if(m==-1) isD = true;
-					int d = line.indexOf("/"); if(d==-1) isM = true;
-					if(isD) 
-					int x = Integer.parseInt(line.get(index)));
-					int y = Integer.parseInt(line.get(index+2));
-					//double answer = Calculator.calc(x,y,line.get(index+1));
-					line.remove(index);
-					line.remove(index+1);
-					line.remove(index+2);
-					//line.add(0, Double.toString(answer));
+				
+				while(line.contains("*") || line.contains("/")) {
+					int m = line.indexOf("*");
+					int d = line.indexOf("/");
+					int index;
+					if(m == -1 && d == -1) {
+						break;
+					}
+					if(m == -1)
+						index = d;
+					else if(d == -1)
+						index = m;
+					else if(d > m)
+						index = m;
+					else
+						index = d;
+					index = m;
+					
+					
+					
+					int x = Integer.parseInt(line.get(index-1));
+					int y = Integer.parseInt(line.get(index+1));
+					double answer = Calculator.calc(x,y,line.get(index));
+					out.println(answer);
+					line.remove(index-1);
+					line.remove(index-1);
+					line.remove(index-1);
+					line.add(0, Double.toString(answer));
+					out.println(line);
 				}
-				*/
-				int x = Integer.parseInt(line.get(0));
-				int y = Integer.parseInt(line.get(2));
-				double answer = Calculator.calc(x,y,line.get(1));
+				;
 				//addition & subtraction
 				
-				out.println(answer);
+				//out.println(answer);
 			}
 			
 			if(s.equals("what")) {
