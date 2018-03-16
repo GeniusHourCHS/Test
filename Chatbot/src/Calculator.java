@@ -1,38 +1,37 @@
-import java.util.Scanner;
+class Calculator {
 
-public class Calculator {
-
-	@SuppressWarnings("resource")
-	public static void main(String[] args) {
-		
-		double num1 = 0 ;
-		double num2 = 0 ;
-		char operator;
 		double answer = 0.0;
+		double fail = 0.0;
 		
-		Scanner scanObject = new Scanner(System.in);
-		System.out.println("What is your 1st number");
-		num1 = scanObject.nextDouble();
-		System.out.println("Waht is your 2nd numbner");
-		num2 = scanObject.nextDouble();
-		System.out.println("What is your opperation's symbol");
-		operator = scanObject.next().charAt(0);
-		
-		switch (operator) {
+		public <string> double calc(double one, double two, string operator){
 			
-			case '+': answer = num1 + num2;
-			break;
-			case '-': answer = num1 - num2;
-			break;
-			case '/': answer = num1/num2;
-			break;
-			case '*': answer = num1 * num2;
-			break;
+			if(operator == "+") {
+			answer = one + two;
+			}
+			else if(operator == "-"){
+			answer = one - two;
+			}
+			else if(operator == "/"){
+			answer = one/two;		
+			}
+			else if(operator == "*"){
+			answer = one * two;
+			}
+			else if(operator == "s"){
+				
+			}
+			else{
+			fail = 1;
 	
+			}
+			if(fail == 1) {
+				return fail;
+			}
+			else{
+				return answer;		
+			}
 		}
-		
-		System.out.println(num1+" "+operator+" "+num2+" = "+answer);
-		
-	}
 
+
+		
 }
