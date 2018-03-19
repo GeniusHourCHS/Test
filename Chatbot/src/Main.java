@@ -26,7 +26,7 @@ public class Main {
 			//setting up arraylist of question
 			String[] q = question.split(" ");	
 			List<String> ln = Arrays.asList(q);
-			ArrayList<String> line = new ArrayList<String>();
+			ArrayList<String> line = new ArrayList<>();
 			line.addAll(ln);
 			String s = line.get(0).toLowerCase(); //the first word
 			
