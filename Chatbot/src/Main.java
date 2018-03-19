@@ -1,8 +1,14 @@
-import java.io.*; import java.util.*; import static java.lang.System.*; 
+import java.io.*; import java.util.*;
+
+import static java.lang.System.*; 
 
 public class Main { 
 	
 	public static void main(String[] args) { 
+		run();
+	}
+	
+	public static void run() {
 		Scanner big = new Scanner(System.in); 
 		String[] nums = {"0","1","2","3","4","5","6","7","8","9"};
 		final List<String> numbers = Arrays.asList(nums);
@@ -22,6 +28,8 @@ public class Main {
 		 */
 		
 		String question = big.nextLine(); 
+		//doesn't do anything yet
+		question = NaturalLanguageUtil.process(question);
 		do { 
 			
 			//setting up arraylist of question
@@ -53,5 +61,4 @@ public class Main {
 		while (!question.equals("bye")); 
 		out.println("okay, bye :'(");
 	}
-
 }
