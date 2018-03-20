@@ -1,13 +1,30 @@
 import java.util.Random;
 
 public class phrases {
+	    
+	String jokeA;
+	String answer;
+	public phrases(String first, String second) 
+	 {
+	        jokeA = first;
+	        answer = second;
+	    }
 
-	public static void main(String[] args) {
-		
-		Random rand = new Random();
-		int joke = 1;//rand.nextInt(26);
-		String jokeString = "1"; 
-		String jokeAnswer = "2";
+	    public String getFirst() {
+	        return jokeA;
+	    }
+
+	    public String getSecond() {
+	        return answer;
+	    }
+	    
+	    
+	    	    
+	
+		public static phrases getJoke(int joke)
+		{
+			String jokeString = null;
+			String jokeAnswer = null;
 		switch(joke) 
 		{
 		case 1: jokeString = "Why did the goat walk into the apple store";
@@ -87,9 +104,15 @@ break;
 break;	
 
 		}
-		System.out.println(jokeString);
-		System.out.println(jokeAnswer);
-		
+	return new phrases(jokeString, jokeAnswer);
+		}
+		/*shows its working
+		Random rand = new Random();
+		int joke = rand.nextInt(26);
+		phrases phrases = getJoke(joke);
+		System.out.println(Phrases.joke() + phrases.answer());
+		*/
 	}
 
-}
+
+
