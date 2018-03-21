@@ -18,9 +18,9 @@ public class Main {
 		 * Introduction and greeting
 		 */
 		out.println("Hello, I am chatbot."); 
-		out.println("Ask me things like: \"How are you?\", or \"Make my name fancy\". What's your name?"); 
-		User user = new User(big.next());
-		out.println("Great, " + user.getName() + ". Now ask me anything.");
+		out.println( "What's your name?"); 
+		User user = new User(big.next(), "null", 0);
+		out.println("Great, " + user.getName() + ". Now ask me  things like: \"How are you?\", or \"Make my name fancy\"");
 		big.nextLine();
 		
 		/*
