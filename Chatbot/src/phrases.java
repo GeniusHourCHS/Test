@@ -4,17 +4,16 @@ public class phrases {
 	    
 	String jokeA;
 	String answer;
-	public phrases(String first, String second) 
-	 {
+	public phrases(String first, String second) {
 	        jokeA = first;
 	        answer = second;
 	    }
 
-	    public String getFirst() {
+	 public String getFirst() {
 	        return jokeA;
 	    }
 
-	    public String getSecond() {
+	public String getSecond() {
 	        return answer;
 	    }
 	    
