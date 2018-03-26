@@ -40,7 +40,7 @@ class Calculator {
 	 */
 	public static String simplify(ArrayList<String> line) {
 		if(line.toString().equals("[2, +, 2, -, 1]")) {
-			return "TWO PLUS TWO MINUS ONE THAT'S THREE QUICK MATHS!\n--BIG SHAQ, 2017";
+			return "TWO PLUS TWO IS FOUR, MINUS ONE THAT'S THREE QUICK MATHS!\n--BIG SHAQ, 2017";
 		}
 
 		//exponent
