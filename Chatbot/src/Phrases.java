@@ -1,10 +1,10 @@
-import java.util.Random;
+//import java.util.Random;
 
-public class phrases {
+public class Phrases {
 	    
 	String jokeA;
 	String answer;
-	public phrases(String first, String second) {
+	public Phrases(String first, String second) {
 	        jokeA = first;
 	        answer = second;
 	    }
@@ -20,7 +20,7 @@ public class phrases {
 	    
 	    	    
 	
-		public static phrases getJoke(int joke)
+		public static Phrases getJoke(int joke)
 		{
 			String jokeString = null;
 			String jokeAnswer = null;
@@ -103,13 +103,13 @@ break;
 break;	
 
 		}
-	return new phrases(jokeString, jokeAnswer);
+	return new Phrases(jokeString, jokeAnswer);
 		}
 		/*shows its working
 		Random rand = new Random();
 		int joke = rand.nextInt(26);
-		phrases phrases = getJoke(joke);
-		System.out.println(Phrases.joke() + phrases.answer());
+		Phrases Phrases = getJoke(joke);
+		System.out.println(Phrases.joke() + Phrases.answer());
 		*/
 	}
 

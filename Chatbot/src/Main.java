@@ -17,12 +17,13 @@ public class Main {
 		/*
 		 * Introduction and greeting
 		 */
+		Phrases p = Phrases.getJoke(1);
 		out.println("Hello, I am chatbot."); 
 		out.println( "What's your name?"); 
 		User user = new User(big.next(), "null", 0);
 		out.println("Great, " + user.getName() + ". Now ask me  things like: \"How are you?\", or \"Make my name fancy\"");
 		big.nextLine();
-		
+		boolean isJoke = false;
 		/*
 		 * processing the question
 		 */
@@ -55,7 +56,20 @@ public class Main {
 				out.println("Why not?");
 			}
 			
-			question = big.nextLine(); 
+			//testing Phrases.java
+			if(isJoke) {
+				out.println(p.getSecond());
+				isJoke = false;
+			}
+			if(question.equals("tell me a joke")) {
+				p = Phrases.getJoke((int)(Math.random()*25)+1);
+				out.println(p.getFirst());
+				isJoke = true;
+			}
+			
+			
+			
+			question = NaturalLanguageUtil.process(big.nextLine()); 
 			
 		} 
 		while (!question.equals("bye")); 
