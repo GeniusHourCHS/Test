@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 class Calculator {
 
@@ -126,6 +128,104 @@ class Calculator {
 		}
 		return output;
 	}
+	
+	//takes a String
+	public static String simplify(String l) {
+		l = l.replaceAll(" ", "");
+		l = l.replaceAll("[+]", " + ");
+		l = l.replaceAll("[-]", " - ");
+		l = l.replaceAll("[*]", " * ");
+		l = l.replaceAll("[/]", " / ");
+		l = l.replaceAll("[\\^]", " ^ ");
+		List<String> ln = Arrays.asList(l.split(" "));
+		ArrayList<String> line = new ArrayList<>(ln);
 
+		if(line.toString().equals("[2, +, 2, -, 1]")) {
+			return "TWO PLUS TWO IS FOUR, MINUS ONE THAT'S THREE QUICK MATHS!\n--BIG SHAQ, 2017";
+		}
+
+		//exponent
+		while(line.contains("^")) {
+			int index = line.indexOf("^");
+			double x = Double.parseDouble(line.get(index-1));
+			double y = Double.parseDouble(line.get(index+1));
+			double answer = Calculator.calc(x,y,line.get(index));
+			line.remove(index-1);
+			line.remove(index-1);
+			line.remove(index-1);
+			line.add(index-1, Double.toString(answer));
+		}
+
+		//multiplication & division
+		while(line.contains("*") || line.contains("/")) {
+			int m = line.indexOf("*");
+			int d = line.indexOf("/");
+			int index;
+			if(m == -1 && d == -1) {
+				break;
+			}
+			if(m == -1) {
+				index = d;
+			}
+			else if(d == -1)
+				index = m;
+			else if(d > m)
+				index = m;
+			else
+				index = d;
+
+
+
+
+			double x = Double.parseDouble(line.get(index-1));
+			double y = Double.parseDouble(line.get(index+1));
+			double answer = Calculator.calc(x,y,line.get(index));
+			line.remove(index-1);
+			line.remove(index-1);
+			line.remove(index-1);
+			line.add(index-1, Double.toString(answer));
+		}
+
+		//addition & subtraction
+		while(line.contains("+") || line.contains("-")) {
+			int m = line.indexOf("+");
+			int d = line.indexOf("-");
+			int index;
+			if(m == -1 && d == -1) {
+				break;
+			}
+			if(m == -1) {
+				index = d;
+			}
+			else if(d == -1)
+				index = m;
+			else if(d > m)
+				index = m;
+			else
+				index = d;
+
+
+
+
+			double x = Double.parseDouble(line.get(index-1));
+			double y = Double.parseDouble(line.get(index+1));
+			double answer = Calculator.calc(x,y,line.get(index));
+			line.remove(index-1);
+			line.remove(index-1);
+			line.remove(index-1);
+			line.add(index-1, Double.toString(answer));
+
+		}
+
+		String output = ""+line.get(0);
+		//formatting the output
+		while(output.charAt(output.length()-1) == '0') {
+			output = output.substring(0, output.length()-1);
+		}
+		if(output.charAt(output.length()-1) == '.') {
+			output = output.substring(0, output.length()-1);
+		}
+		return output;
+	}
 		
 }
