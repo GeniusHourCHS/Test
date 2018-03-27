@@ -44,6 +44,9 @@ class Calculator {
 		if(line.toString().equals("[2, +, 2, -, 1]")) {
 			return "TWO PLUS TWO IS FOUR, MINUS ONE THAT'S THREE QUICK MATHS!\n--BIG SHAQ, 2017";
 		}
+		if(line.toString().equals("[1, +, 1]")) {
+			return "ONE PLUS ONE EQUALS WINDOW";
+		}
 
 		//exponent
 		while(line.contains("^")) {
