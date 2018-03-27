@@ -32,18 +32,17 @@ public class Main {
 		//doesn't do anything yet
 		question = NaturalLanguageUtil.process(question);
 		do { 
-			
+			String output = "";
 			//setting up arraylist of question
+			
 			String[] q = question.split(" ");	
 			List<String> ln = Arrays.asList(q);
 			ArrayList<String> line = new ArrayList<>(ln);
+
 			String s = line.get(0).toLowerCase(); //the first word
 			
 			//Simplifying expression
-			if(numbers.contains(s.substring(0,1))) {
-				out.println(Calculator.simplify(line));
-			}
-
+			output += question;
 			//respond to greetings
 			if(greetings.contains(s)) {
 				//Conversation.greeting(s);
@@ -68,7 +67,7 @@ public class Main {
 			}
 			
 			
-			
+			out.println(output);
 			question = NaturalLanguageUtil.process(big.nextLine()); 
 			
 		} 
