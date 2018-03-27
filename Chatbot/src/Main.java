@@ -47,7 +47,7 @@ public class Main {
 			//respond to greetings
 			if(greetings.contains(s)) {
 				//Conversation.greeting(s);
-				out.println(s + " how r u  tododay, I am weelll thanks for asking");
+				out.println(s + " how r u  tododay, I am Gucci thanks for asking");
 			}
 
 			if(s.equals("what")) {
@@ -57,14 +57,14 @@ public class Main {
 			}
 			
 			//testing Phrases.java
-			if(isJoke) {
-				out.println(p.getSecond());
-				isJoke = false;
-			}
 			if(question.equals("tell me a joke")) {
 				p = Phrases.getJoke((int)(Math.random()*25)+1);
 				out.println(p.getFirst());
 				isJoke = true;
+			}
+			if(isJoke) {
+				out.println(p.getSecond());
+				isJoke = false;
 			}
 			
 			
