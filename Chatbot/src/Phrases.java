@@ -115,7 +115,64 @@ public class Phrases {
 		Phrases Phrases = getJoke(joke);
 		System.out.println(Phrases.joke() + Phrases.answer());
 		*/
-	}
+		
+		//one liners method, similar to getJoke method but only returns one string as implied in the name
+		
+		public static String getOneLiner(int joke)
+		{
+			String oneLiner = null;
+		
+			switch(joke) 
+		{
+			case 1:
+				oneLiner = "Worry is the intrest paid in advance on a debt you may never owe";
+				break;
+			case 2:
+				oneLiner = "They tried to bury us, but they didn't know we were seeds";
+				break;
+			case 3:
+				oneLiner = "If you don't sacrafice for what you want, what you want will be the sacrafice";
+				break;
+			case 4:
+				oneLiner = "Be as you wish to seem";
+				break;
+			case 5:
+				oneLiner = "In  order to love who you are, you cannot hate the experiences taht shaped you";
+				break;
+			case 6:
+				oneLiner = "When you're curious, you find lots of interesting things to do";
+				break;
+			case 7:
+				oneLiner = "Challenges are what make life interesting and overcoming them is what makes life meaningful";
+				break;
+			case 8:
+				oneLiner = "Raise your words not your voice as it is rain that grows flowers, not thunder";
+				break;
+			case 9:
+				oneLiner = "There can be no positive results through a negative attitude, think positive, live positive";
+				break;
+			case 10:
+				oneLiner = "The cost of not following your heart is spending the rest of your life wishing you had";
+				break;
+			case 11:
+				oneLiner = "The biggest communication problem is we don't listen to understand, we listen to reply";
+				break;
+			case 12:
+				oneLiner = "Be not afraid of going slowley, be afraid only of standing still";
+				break;
+			case 13:
+				oneLiner = "When you take an L, don't lose the lesson";
+				break;
+			case 14:
+				oneLiner = "Learn the rules so you know how to break them properly";
+				break;
+			case 15:
+				oneLiner = "Sometimes the people who don't talk to you are the ones that really want to";
+				break;
+		}	
+			return oneLiner;
+		}
+}
 
 
 
