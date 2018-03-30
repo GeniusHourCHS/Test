@@ -4,6 +4,7 @@ public class Phrases {
 	    
 	String jokeA;
 	String answer;
+	
 	public Phrases(String first, String second) {
 	        jokeA = first;
 	        answer = second;

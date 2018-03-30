@@ -55,6 +55,16 @@ public class Main {
 				out.println("Why not?");
 			}
 			
+			//testing probability
+			if(question.equals("flip a coin")) {
+				String coin = Probability.flipCoin();
+				out.println(coin);
+			}
+			if(question.equals("pick a card")) {
+				String card = Probability.pickCard();
+				out.println(card);
+			}	
+				
 			//testing Phrases.java
 			if(question.equals("tell me a joke")) {
 				p = Phrases.getJoke((int)(Math.random()*25)+1);
