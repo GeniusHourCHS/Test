@@ -94,4 +94,22 @@ public class Probability {
 		
 		return card;
 	}
+	
+	//method that returns a random number in a range
+	public static int pickRandomNumber(int start, int end) 
+	{	
+	//int range = start - end; 
+	
+	Random rand3 = new Random();
+	int randomNumber = rand3.nextInt(end);
+	
+	if(randomNumber < start)
+	{
+		randomNumber = randomNumber + start;
+	}
+	
+	return randomNumber;
+	}
+	
+	
 }

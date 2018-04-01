@@ -9,6 +9,7 @@ public class Main {
 	}
 	
 	public static void run() {
+		boolean pickNumRandEval = false;
 		Scanner big = new Scanner(System.in); 
 		String[] nums = {"0","1","2","3","4","5","6","7","8","9"};
 		final List<String> numbers = Arrays.asList(nums);
@@ -64,6 +65,20 @@ public class Main {
 				String card = Probability.pickCard();
 				out.println(card);
 			}	
+			
+			//testing random number function
+			if(question.equals("pick a number") || question.equals("pick a random number")) {
+			pickNumRandEval = true;
+			out.println("what is the range in this form, Starting Number, Ending Number");	
+			}	
+			
+			//testing random number function
+			if(pickNumRandEval = true) {
+				int start = 10;
+				int end = 50;
+				int probNum = Probability.pickRandomNumber(start, end);
+				System.out.println("The number is" +probNum);
+			}
 				
 			//testing Phrases.java
 			if(question.equals("tell me a joke")) {
@@ -77,7 +92,7 @@ public class Main {
 			}
 			
 			
-			out.println(output);
+			//out.println(output);
 			question = NaturalLanguageUtil.process(big.nextLine()); 
 			
 		} 
