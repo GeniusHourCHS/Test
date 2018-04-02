@@ -1,14 +1,12 @@
 import java.util.*;
 public class User {
 
-    private String name = "null";
+    private String name;
     private int age = 0;
-    private String birthday = "null";
+    private String birthday;
 
-    public User(String name, String birthday, int age) {
+    public User(String name) {
         this.name = name;
-        this.age = age;
-        this.birthday = birthday;
     }
    
     //modifiers, they allow you to change the variables in this class from elsewhere in the program
@@ -26,8 +24,12 @@ public class User {
     //accessors, they allow you to call and utilize the variables in this class elsewhere in the program
     
     public String getName() {
-        return name;
+        if(name.indexOf(' ') == -1) {
+            return name;
+        }
+        return name.substring(0,name.indexOf(' '));
     }
+    public String getFullName() {return name;}
     public int getAge() {
         return age;
     }

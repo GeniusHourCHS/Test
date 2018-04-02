@@ -1,5 +1,5 @@
 import java.io.*; import java.util.*;
-
+import java.time.LocalTime;
 import static java.lang.System.*; 
 
 public class Main { 
@@ -8,7 +8,7 @@ public class Main {
 		run();
 	}
 	
-	public static void run() {
+	private static void run() {
 		boolean pickNumRandEval = false;
 		Scanner big = new Scanner(System.in); 
 		String[] nums = {"0","1","2","3","4","5","6","7","8","9"};
@@ -21,8 +21,8 @@ public class Main {
 		Phrases p = Phrases.getJoke(1);
 		out.println("Hello, I am chatbot."); 
 		out.println( "What's your name?"); 
-		User user = new User(big.next(), "null", 0);
-		out.println("Great, " + user.getName() + ". Now ask me  things like: \"How are you?\", or \"Make my name fancy\"");
+		User user = new User(big.nextLine());
+		out.println("Great, " + user.getName() + ". Now ask me things like: \"How are you?\", or \"Make my name fancy\"");
 		big.nextLine();
 		boolean isJoke = false;
 		/*
@@ -47,29 +47,28 @@ public class Main {
 			//respond to greetings
 			if(greetings.contains(s)) {
 				//Conversation.greeting(s);
-				out.println(s + " how r u  tododay, I am Gucci thanks for asking");
+				output = s + ", " + user.getName() + ", you look beautiful today. I am Gucci thanks for asking";
 			}
 
 			if(s.equals("what")) {
-				out.println("what?");
+				output = "what?";
 			} else if(s.equals("no")) {
-				out.println("Why not?");
+				output = "Why not?";
 			}
 			
 			//testing probability
 			if(question.equals("flip a coin")) {
-				String coin = Probability.flipCoin();
-				out.println(coin);
+				output = Probability.flipCoin();
+
 			}
 			if(question.equals("pick a card")) {
-				String card = Probability.pickCard();
-				out.println(card);
+				output = Probability.pickCard();
 			}	
-			
+			/*
 			//testing random number function
 			if(question.equals("pick a number") || question.equals("pick a random number")) {
-			pickNumRandEval = true;
-			out.println("what is the range in this form, Starting Number, Ending Number");	
+				pickNumRandEval = true;
+				out.println("what is the range in this form, Starting Number, Ending Number");
 			}	
 			
 			//testing random number function
@@ -77,22 +76,22 @@ public class Main {
 				int start = 10;
 				int end = 50;
 				int probNum = Probability.pickRandomNumber(start, end);
-				System.out.println("The number is" +probNum);
+				output = "The number is" +probNum;
 			}
-				
+				*/
+
 			//testing Phrases.java
 			if(question.equals("tell me a joke")) {
 				p = Phrases.getJoke((int)(Math.random()*25)+1);
-				out.println(p.getFirst());
+				output = p.getFirst();
 				isJoke = true;
-			}
-			if(isJoke) {
-				out.println(p.getSecond());
+			} else if(isJoke) {
+				output = p.getSecond();
 				isJoke = false;
 			}
 			
 			
-			//out.println(output);
+			out.println(output);
 			question = NaturalLanguageUtil.process(big.nextLine()); 
 			
 		} 
