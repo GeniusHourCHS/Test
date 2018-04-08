@@ -9,12 +9,12 @@ public class Main {
 	}
 	
 	private static void run() {
-		boolean pickNumRandEval = false;
 		Scanner big = new Scanner(System.in); 
 		String[] nums = {"0","1","2","3","4","5","6","7","8","9"};
 		final List<String> numbers = Arrays.asList(nums);
 		String[] greet = {"hello", "hi", "hey"};
 		final List<String> greetings = Arrays.asList(greet);
+		
 		/*
 		 * Introduction and greeting
 		 */
@@ -45,6 +45,10 @@ public class Main {
 			//Simplifying expression
 			output += question;
 			//respond to greetings
+			
+			//create variables
+			boolean pickNumRandEval;
+			
 			if(greetings.contains(s)) {
 				//Conversation.greeting(s);
 				output = s + ", " + user.getName() + ", you look beautiful today. I am Gucci thanks for asking";
@@ -64,21 +68,23 @@ public class Main {
 			if(question.equals("pick a card")) {
 				output = Probability.pickCard();
 			}	
-			/*
-			//testing random number function
+			
 			if(question.equals("pick a number") || question.equals("pick a random number")) {
 				pickNumRandEval = true;
-				out.println("what is the range in this form, Starting Number, Ending Number");
+				out.println("what is the range in this form, Starting Number Ending Number");
 			}	
 			
 			//testing random number function
-			if(pickNumRandEval = true) {
-				int start = 10;
-				int end = 50;
+			if(pickNumRandEval=true) {
+				String str = big.nextLine();
+				String[] randNumbers = str.split(" ");
+				int randNumRange1 = Integer.parseInt(randNumbers[0]);
+				int randNumRange2 = Integer.parseInt(randNumbers[1]);
+				int start = randNumRange1;
+				int end = randNumRange2;
 				int probNum = Probability.pickRandomNumber(start, end);
-				output = "The number is" +probNum;
-			}
-				*/
+				output = "The number is " +probNum;
+				}
 
 			//testing Phrases.java
 			if(question.equals("tell me a joke")) {
