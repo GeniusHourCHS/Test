@@ -33,6 +33,7 @@ public class Main {
 		//doesn't do anything yet
 		question = NaturalLanguageUtil.process(question);
 		do { 
+			out.println(question);
 			String output = "";
 			//setting up arraylist of question
 			
@@ -43,11 +44,11 @@ public class Main {
 			String s = line.get(0).toLowerCase(); //the first word
 			
 			//Simplifying expression
-			output += question;
+			if(question.matches("\\d+$"))
+				output += question;
 			//respond to greetings
 			
-			//create variables
-			boolean pickNumRandEval;
+			
 			
 			if(greetings.contains(s)) {
 				//Conversation.greeting(s);
@@ -59,6 +60,13 @@ public class Main {
 			} else if(s.equals("no")) {
 				output = "Why not?";
 			}
+			
+			
+			/*               THESE FUNCTIONS SHOULD BE MOVED TO THE PROBABILITY CLASS OR THE NATURAL LANGUAGE CLASS
+			//create variables
+			boolean pickNumRandEval;
+			
+			
 			
 			//testing probability
 			if(question.equals("flip a coin")) {
@@ -85,7 +93,7 @@ public class Main {
 				int probNum = Probability.pickRandomNumber(start, end);
 				output = "The number is " +probNum;
 				}
-
+			*/
 			//testing Phrases.java
 			if(question.equals("tell me a joke")) {
 				p = Phrases.getJoke((int)(Math.random()*25)+1);
