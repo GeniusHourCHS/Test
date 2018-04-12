@@ -23,16 +23,13 @@ public class Main {
 		out.println( "What's your name?"); 
 		User user = new User(big.nextLine());
 		out.println("Great, " + user.getName() + ". Now ask me things like: \"How are you?\", or \"Make my name fancy\"");
-		big.nextLine();
 		boolean isJoke = false;
 		/*
 		 * processing the question
 		 */
-		
-		String question = big.nextLine(); 
-		//doesn't do anything yet
-		question = NaturalLanguageUtil.process(question);
-		do { 
+		String question = NaturalLanguageUtil.process(big.nextLine());
+		do {
+
 			out.println(question);
 			String output = "";
 			//setting up arraylist of question
@@ -50,7 +47,7 @@ public class Main {
 			
 			
 			
-			if(greetings.contains(s)) {
+			if(greetings.contains(s.toLowerCase())) {
 				//Conversation.greeting(s);
 				output = s + ", " + user.getName() + ", you look beautiful today. I am Gucci thanks for asking";
 			}
@@ -95,7 +92,7 @@ public class Main {
 				}
 			*/
 			//testing Phrases.java
-			if(question.equals("tell me a joke")) {
+			if(question.equals("tell me joke")) {
 				p = Phrases.getJoke((int)(Math.random()*25)+1);
 				output = p.getFirst();
 				isJoke = true;
@@ -103,6 +100,10 @@ public class Main {
 				output = p.getSecond();
 				isJoke = false;
 			}
+			if(question.equals("give me inspirational quote")) {
+				output = Phrases.getOneLiner((int)(Math.random()*15+1));
+			}
+
 			
 			
 			out.println(output);

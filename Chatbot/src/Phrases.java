@@ -2,8 +2,8 @@
 
 public class Phrases {
 	    
-	String jokeA;
-	String answer;
+	private String jokeA;
+	private String answer;
 	
 	public Phrases(String first, String second) {
 	        jokeA = first;
@@ -126,19 +126,19 @@ public class Phrases {
 			switch(joke) 
 		{
 			case 1:
-				oneLiner = "Worry is the intrest paid in advance on a debt you may never owe";
+				oneLiner = "Worry is the interest paid in advance on a debt you may never owe";
 				break;
 			case 2:
 				oneLiner = "They tried to bury us, but they didn't know we were seeds";
 				break;
 			case 3:
-				oneLiner = "If you don't sacrafice for what you want, what you want will be the sacrafice";
+				oneLiner = "If you don't sacrifice for what you want, what you want will be the sacrifice";
 				break;
 			case 4:
 				oneLiner = "Be as you wish to seem";
 				break;
 			case 5:
-				oneLiner = "In  order to love who you are, you cannot hate the experiences taht shaped you";
+				oneLiner = "In  order to love who you are, you cannot hate the experiences that shaped you";
 				break;
 			case 6:
 				oneLiner = "When you're curious, you find lots of interesting things to do";
@@ -159,7 +159,7 @@ public class Phrases {
 				oneLiner = "The biggest communication problem is we don't listen to understand, we listen to reply";
 				break;
 			case 12:
-				oneLiner = "Be not afraid of going slowley, be afraid only of standing still";
+				oneLiner = "Be not afraid of going slowly, be afraid only of standing still";
 				break;
 			case 13:
 				oneLiner = "When you take an L, don't lose the lesson";
