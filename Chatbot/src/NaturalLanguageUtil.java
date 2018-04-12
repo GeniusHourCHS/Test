@@ -18,6 +18,12 @@ public class NaturalLanguageUtil {
 		String output = question.replaceAll("the |an |a ", "");
 		return output;
 	}
+	
+	/*
+	* @param question is the question inputted by the user.
+	* @return is the question with apostrophes converted to "is"
+	* e.g. "What's" -> "What is "
+	 */
 	private static String apostropheProcess(String question) {
 		String output = question;
 		int apostrophe = question.indexOf("'");
