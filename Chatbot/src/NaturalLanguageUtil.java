@@ -16,7 +16,7 @@ public class NaturalLanguageUtil {
 
 	}
 	private static String replaceArticles(String question) {
-		String output = question.replaceAll("the |an |a ", "");
+		String output = question.replaceAll("the |an |a |me |john | ", "");
 		return output;
 	}
 

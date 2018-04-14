@@ -59,22 +59,22 @@ public class Main {
 			}
 			
 			
-			/*               THESE FUNCTIONS SHOULD BE MOVED TO THE PROBABILITY CLASS OR THE NATURAL LANGUAGE CLASS
+		              /*THESE FUNCTIONS SHOULD BE MOVED TO THE PROBABILITY CLASS OR THE NATURAL LANGUAGE CLASS
 			//create variables
 			boolean pickNumRandEval;
 			
 			
 			
 			//testing probability
-			if(question.equals("flip a coin")) {
+			if(question.equals("flipcoin")) {
 				output = Probability.flipCoin();
 
 			}
-			if(question.equals("pick a card")) {
+			if(question.equals("pickcard")) {
 				output = Probability.pickCard();
 			}	
 			
-			if(question.equals("pick a number") || question.equals("pick a random number")) {
+			if(question.equals("picknumber") || question.equals("pickrandom number")) {
 				pickNumRandEval = true;
 				out.println("what is the range in this form, Starting Number Ending Number");
 			}	
@@ -92,7 +92,7 @@ public class Main {
 				}
 			*/
 			//testing Phrases.java
-			if(question.equals("tell me joke")) {
+			if(question.equals("telljoke")) {
 				p = Phrases.getJoke((int)(Math.random()*25)+1);
 				output = p.getFirst();
 				isJoke = true;
@@ -100,7 +100,7 @@ public class Main {
 				output = p.getSecond();
 				isJoke = false;
 			}
-			if(question.equals("give me inspirational quote")) {
+			if(question.equals("tellinspirationalquote")) {
 				output = Phrases.getOneLiner((int)(Math.random()*15+1));
 			}
 
