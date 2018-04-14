@@ -21,7 +21,7 @@ public class NaturalLanguageUtil {
 	}
 
 	/**
-	 * processes phrases with apostrophes
+	 * processes phrases with apostrophes to a proper format
 	* @param question is the question inputted by the user.
 	* @return is the question with apostrophes converted to "is"
 	* e.g. "What's" -> "What is "
