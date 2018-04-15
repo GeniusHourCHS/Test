@@ -11,13 +11,15 @@ public class Test {
 	
 	public static void main(String[] args) { 
 
-		String encoding = "UTF-8";
+		//String encoding = "UTF-8";
 		
 		try {
-			String searchText = "donald trump";
-			Document google = Jsoup.connect("https://www.google.com/search?q=" + URLEncoder.encode(searchText, encoding)).userAgent("Mozilla/5.0").get();
-			
-			Elements webSitesLinks = google.getElementsByTag("cite");
+			//String searchText = "Duck";
+			Document google = Jsoup.connect("https://www.facebook.com"/* + URLEncoder.encode(searchText, encoding)).userAgent("Mozilla/5.0"*/).get();
+			String title = google.title();
+			System.out.println(title);
+		
+			/*Elements webSitesLinks = google.getElementsByTag("cite");
 			
 			//Check if any results found
 			if (webSitesLinks.isEmpty()) {
@@ -26,17 +28,12 @@ public class Test {
 			}
 			
 			webSitesLinks.forEach(link->System.out.println(link.text()));
-			
-			//========If you want to get the first link ================
-			//String firstWebSiteLink = webSitesLinks.get(0).text();
-			
-			//System.out.println(firstWebSiteLink);
-			
-			//Move to the next page code..
-			
+		*/
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+	
 		
 	}
 	

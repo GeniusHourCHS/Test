@@ -1,3 +1,9 @@
+import java.io.IOException;
+import java.net.URLEncoder;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 public class googleClass {
 
@@ -5,7 +11,24 @@ public class googleClass {
 	{
 		String answer;
 		
+		String encoding = "UTF-8";
 		
+		try {
+			Document google = Jsoup.connect("https://www.google.com/search?q=" + URLEncoder.encode(input, encoding)).userAgent("Mozilla/5.0").get();
+			
+			Elements webSitesLinks = google.getElementsByTag("cite");
+			
+			//Check if any results found
+			if (webSitesLinks.isEmpty()) {
+				answer = "No results found";
+			}
+		
+			//need to fix this
+			webSitesLinks.forEach(link->answer);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		
 		return answer;
