@@ -16,15 +16,14 @@ public class googleClass {
 		try {
 			Document google = Jsoup.connect("https://www.google.com/search?q=" + URLEncoder.encode(input, encoding)).userAgent("Mozilla/5.0").get();
 			
-			Elements webSitesLinks = google.getElementsByTag("cite");
+			Elements Answer = google.getElementsByTag("answer");
 			
 			//Check if any results found
 			if (webSitesLinks.isEmpty()) {
 				answer = "No results found";
 			}
 		
-			//need to fix this
-			webSitesLinks.forEach(link->answer);
+		
 			
 		} catch (IOException e) {
 			e.printStackTrace();
