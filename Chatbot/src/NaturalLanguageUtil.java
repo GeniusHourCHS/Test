@@ -57,11 +57,25 @@ public class NaturalLanguageUtil {
 		if(question.equals("what can you do?")) {
 			return "I can tell jokes, do math or flip a coin.";
 		}
-		return question;
+		String[] q = question.split(" ");
+		String questionWord = q[1];
+		if(questionWord.equals("is") {
+			
+		}
+		
+		else return "I don't know, what " + questionWord + question.substring(6+questionWord.length()) + "?";
 	}
 
 	private static String when(String question) {
-		return question;
+		String[] q = question.split(" ");
+		String questionWord = q[1];
+		if(questionWord.equals("was")) {
+			return "A long, long time ago.";
+		} else if (questionWord.equals("does")) {
+			
+		}
+			
+		else return "I don't know, when " + questionWord + question.substring(6+questionWord.length()) + "?";
 	}
 
 	private static String where(String question) {
