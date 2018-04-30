@@ -1,8 +1,10 @@
 import java.io.*; import java.util.*;
 import java.time.LocalTime;
+import java.applet.Applet;
+
 import static java.lang.System.*; 
 
-public class Main { 
+public class Main extends Applet {
 	
 	public static void main(String[] args) { 
 		run();

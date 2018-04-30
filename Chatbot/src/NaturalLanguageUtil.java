@@ -84,7 +84,7 @@ public class NaturalLanguageUtil {
 			
 		}
 		
-		return ("I don't know, when " + questionWord + question.substring(6+questionWord.length()) + "?");
+		return ("I don't know, when " + questionWord + " " + question.substring(6+questionWord.length()) + "?");
 	}
 
 	private static String where(String question) {
