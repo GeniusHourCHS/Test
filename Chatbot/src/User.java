@@ -38,6 +38,10 @@ public class User {
     public String getBirthday() {
         return birthday;
     }
+    public String toString() {
+    	return name + "\n" + emotion; 
+    }
+  
 
 }
 

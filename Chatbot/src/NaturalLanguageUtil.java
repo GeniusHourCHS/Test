@@ -4,7 +4,7 @@ public class NaturalLanguageUtil {
 	
 	public static String process(String question) {
 		//math
-		if(question.replaceAll(" ", "").matches("^(\\d+[+-/*\\^]\\d+)")) {
+		if(question.replaceAll(" ", "").matches("^(\\d+[+-/*\\^]\\d+).*$")) {
 			return Calculator.simplify(question.replaceAll(" ", ""));
 		}
 		
@@ -12,11 +12,21 @@ public class NaturalLanguageUtil {
 		
 		String output = replaceArticles(question.toLowerCase());
 		output = apostropheProcess(output);
+		
+		
+		
+		
+		if(output.length() > 4 && output.substring(0,  4).equals("when")) {
+			output = when(output);			
+		} else if(output.length()  > 3 && output.substring(0 ,3).equals("how")) {
+			output = how(output);
+		}
+
 		return output;
 
 	}
 	private static String replaceArticles(String question) {
-		String output = question.replaceAll("the |an |a |me |john | ", "");
+		String output = question.replaceAll("the |an |a ", "");
 		return output;
 	}
 
@@ -59,11 +69,10 @@ public class NaturalLanguageUtil {
 		}
 		String[] q = question.split(" ");
 		String questionWord = q[1];
-		if(questionWord.equals("is") {
+		if(questionWord.equals("is")) {
 			
 		}
-		
-		else return "I don't know, what " + questionWord + question.substring(6+questionWord.length()) + "?";
+		 return ("I don't know, what " + questionWord + question.substring(6+questionWord.length()) + "?");
 	}
 
 	private static String when(String question) {
@@ -74,8 +83,8 @@ public class NaturalLanguageUtil {
 		} else if (questionWord.equals("does")) {
 			
 		}
-			
-		else return "I don't know, when " + questionWord + question.substring(6+questionWord.length()) + "?";
+		
+		return ("I don't know, when " + questionWord + question.substring(6+questionWord.length()) + "?");
 	}
 
 	private static String where(String question) {
@@ -85,6 +94,9 @@ public class NaturalLanguageUtil {
 		return question;
 	}
 	private static String how(String question) {
+		if(question.equals("how are you?")) {
+			return "I am pleased to meet you!";
+		}
 		return question;
 	}
 

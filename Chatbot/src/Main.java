@@ -30,7 +30,7 @@ public class Main {
 		String question = NaturalLanguageUtil.process(big.nextLine());
 		do {
 
-			out.println(question);
+			//out.println(question);
 			String output = "";
 			//setting up arraylist of question
 			
@@ -47,9 +47,9 @@ public class Main {
 			
 			
 			
-			if(greetings.contains(s.toLowerCase())) {
+			if(greetings.contains(s)) {
 				//Conversation.greeting(s);
-				output = s + ", " + user.getName() + ", you look beautiful today. I am Gucci thanks for asking";
+				output = s + ", " + user.getName() + ", you look beautiful today.";
 			}
 
 			if(s.equals("what")) {
@@ -92,7 +92,7 @@ public class Main {
 				}
 			*/
 			//testing Phrases.java
-			if(question.equals("telljoke")) {
+			if(question.equals("tell me joke")) {
 				p = Phrases.getJoke((int)(Math.random()*25)+1);
 				output = p.getFirst();
 				isJoke = true;
@@ -100,9 +100,10 @@ public class Main {
 				output = p.getSecond();
 				isJoke = false;
 			}
-			if(question.equals("tellinspirationalquote")) {
+			if(question.equals("tell me inspirational quote")) {
 				output = Phrases.getOneLiner((int)(Math.random()*15+1));
 			}
+			if(output.equals("")) output = question;
 
 			
 			
