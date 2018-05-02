@@ -1,4 +1,3 @@
-/*
 import java.io.IOException;
 import java.net.URLEncoder;
 
@@ -8,30 +7,22 @@ import org.jsoup.select.Elements;
 
 public class googleClass {
 
-	public static String googleThing(String input)
-	{
-		String answer;
-		
+	public static String googleReteiveAnswer(String input)
+	{		
 		String encoding = "UTF-8";
 		
 		try {
 			Document google = Jsoup.connect("https://www.google.com/search?q=" + URLEncoder.encode(input, encoding)).userAgent("Mozilla/5.0").get();
+			String title = google.title();
+			System.out.println(title);
+			String answer = google.select("div div div div div div div").get(0).text();
 			
-			Elements Answer = google.getElementsByTag("answer");
-			
-			//Check if any results found
-			if (webSitesLinks.isEmpty()) {
-				answer = "No results found";
-			}
-		
-		
-			
+			return answer;
+	        
 		} catch (IOException e) {
 			e.printStackTrace();
+			return null;
 		}
 		
-		
-		return answer;
 	}
 }
-*/

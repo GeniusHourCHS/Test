@@ -13,7 +13,7 @@ public class Test {
 	
 	public static void main(String[] args) throws IOException  { 
 		
-		String encoding = "UTF-8";
+		/*String encoding = "UTF-8";
 		
 			String searchText = "who is the president of Argentina";
 			Document google = Jsoup.connect("https://www.google.com/search?q="+ URLEncoder.encode(searchText, encoding)).userAgent("Mozilla/5.0").get();
@@ -33,7 +33,10 @@ public class Test {
 	
 		
 		// private static void log(String msg, String... vals) {
-		        //System.out.println(String.format(msg, vals));
+		        //System.out.println(String.format(msg, vals));*/
+		String input = "What is the most populus city in the world";
+		String xd = googleClass.googleReteiveAnswer(input);
+		System.out.println(xd);
 	}
 }
 

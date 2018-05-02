@@ -112,6 +112,27 @@ public class Main extends Applet {
 			out.println(output);
 			question = NaturalLanguageUtil.process(big.nextLine()); 
 			
+			
+			
+			
+			
+			
+			//Testing google program accessing
+			String[] q1 = question.split(" ");
+			String questionWord = q1[1];
+		if (questionWord.equals("what is")) {
+			
+			String googleClassA = googleClass.googleReteiveAnswer(question);
+			System.out.println(googleClassA);	
+		} 
+		else if (questionWord.equals("who")) {
+			
+			String googleClassA = googleClass.googleReteiveAnswer(question);
+			System.out.println(googleClassA);
+		}
+		
+		
+		
 		} 
 		while (!question.equals("bye")); 
 		out.println("okay, bye :'(");
