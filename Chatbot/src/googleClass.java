@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.util.Scanner;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -7,7 +8,17 @@ import org.jsoup.select.Elements;
 
 public class googleClass {
 
-	public static String googleReteiveAnswer(String input)
+	public static void main(String args[]) throws IOException {
+		String input = "";
+		do {
+			Scanner s = new Scanner(System.in);
+			System.out.print("enter a search phrase: ");
+			input = s.nextLine();
+			System.out.println(googleRetrieveAnswer(input));
+		} while(!input.equals("stop"));
+
+	}
+	public static String googleRetrieveAnswer(String input)
 	{		
 		String encoding = "UTF-8";
 		

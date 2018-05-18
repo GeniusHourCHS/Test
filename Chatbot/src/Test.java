@@ -8,7 +8,7 @@ import org.jsoup.select.Elements;
 import java.util.List;
 
 import java.util.Random;
-
+/*
 public class Test {
 	
 	public static void main(String[] args) throws IOException  { 
@@ -33,12 +33,12 @@ public class Test {
 	
 		
 		// private static void log(String msg, String... vals) {
-		        //System.out.println(String.format(msg, vals));*/
+		        //System.out.println(String.format(msg, vals));
 		String input = "What is the most populus city in the world";
 		String xd = googleClass.googleReteiveAnswer(input);
 		System.out.println(xd);
 	}
-}
+}*/
 
 
 	

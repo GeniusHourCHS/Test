@@ -120,14 +120,15 @@ public class Main extends Applet {
 			//Testing google program accessing
 			String[] q1 = question.split(" ");
 			String questionWord = q1[1];
+
 		if (questionWord.equals("what is")) {
 			
-			String googleClassA = googleClass.googleReteiveAnswer(question);
+			String googleClassA = googleClass.googleRetrieveAnswer(question);
 			System.out.println(googleClassA);	
 		} 
 		else if (questionWord.equals("who")) {
 			
-			String googleClassA = googleClass.googleReteiveAnswer(question);
+			String googleClassA = googleClass.googleRetrieveAnswer(question);
 			System.out.println(googleClassA);
 		}
 		
